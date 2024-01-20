@@ -5,7 +5,7 @@ import Feedback from './components/Feedback/Feedback';
 import { Notification } from './components/Notification/Notification';
 
 const App = () => {
-  const initFeedback=JSON.parse(localStorage.getItem('feedback') || { good: 0, neutral: 0, bad: 0 })
+  const initFeedback=JSON.parse(localStorage.getItem('feedback')) || { good: 0, neutral: 0, bad: 0 }
   const [feedback, setFeedback] = useState(initFeedback);
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
   const positive = Math.round(((feedback.good + feedback.neutral) / totalFeedback) * 100)
