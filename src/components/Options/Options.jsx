@@ -1,10 +1,16 @@
-const Options = ({ onGood, onNeutral, onBad, onReset }) => {
+const Options = ({ onSmt, onReset }) => {
   return (
     <div>
       <h2>Please leave your feedback</h2>
-      <button onClick={onGood}>Good</button>
-      <button onClick={onNeutral}>Neutral</button>
-      <button onClick={onBad}>Bad</button>
+      <button onClick={() => {
+        onSmt('good')
+      }}>Good</button>
+      <button onClick={() => {
+        onSmt('neutral')
+      }}>Neutral</button>
+      <button onClick={() => {
+        onSmt('bad')
+      }}>Bad</button>
       <button onClick={onReset}>Reset</button>
     </div>
   );
